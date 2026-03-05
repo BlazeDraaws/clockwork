@@ -1,0 +1,292 @@
+[gd_scene load_steps=17 format=3 uid="uid://cnm4y3idqfuh1"]
+
+[ext_resource type="Texture2D" uid="uid://dbpmtm0eifpch" path="res://Assets/Clef1.png" id="2_smcbt"]
+[ext_resource type="Texture2D" uid="uid://butygjddx4p3r" path="res://Assets/Clef2.png" id="3_fcf81"]
+[ext_resource type="Texture2D" uid="uid://j80ku3ne3kdq" path="res://Assets/clef3.png" id="4_o6pox"]
+[ext_resource type="Texture2D" uid="uid://b8sayjrya5psr" path="res://Assets/clef4.png" id="5_4mq81"]
+[ext_resource type="SpriteFrames" uid="uid://cuojb25llbtii" path="res://Assets/Notes/notes.tres" id="5_o667r"]
+[ext_resource type="Script" path="res://note.gd" id="6_ccdyr"]
+[ext_resource type="Texture2D" uid="uid://dyt1t13xbh188" path="res://Assets/empty line.png" id="6_hlyne"]
+[ext_resource type="Texture2D" uid="uid://d1h2kvybd5dqv" path="res://Assets/full line.png" id="7_01ijn"]
+[ext_resource type="Texture2D" uid="uid://s3m1nbagtpom" path="res://Assets/border.png" id="8_fgxyq"]
+[ext_resource type="Script" path="res://clef.gd" id="8_ilgsy"]
+[ext_resource type="Texture2D" uid="uid://ctomrrtr2ncsh" path="res://Assets/guides.png" id="9_hu836"]
+[ext_resource type="Script" path="res://Beat Timeline Bar.gd" id="9_kxomr"]
+[ext_resource type="Texture2D" uid="uid://cq5m3wjoxoqbg" path="res://Assets/glow border.png" id="9_s1hxp"]
+[ext_resource type="Script" path="res://glow_border.gd" id="10_rmlci"]
+[ext_resource type="Texture2D" uid="uid://b3ih23pxu41i3" path="res://Assets/semi line.png" id="14_jgfe8"]
+[ext_resource type="Texture2D" uid="uid://cwnht5e7us3da" path="res://Assets/Notes/sub note.png" id="16_o3l78"]
+
+[node name="Node for Preview" type="Node2D"]
+metadata/_edit_vertical_guides_ = [538.0, 536.0]
+
+[node name="Music Sheet" type="CanvasGroup" parent="."]
+position = Vector2(311, 561)
+
+[node name="Border" type="Sprite2D" parent="Music Sheet"]
+modulate = Color(1, 1, 1, 0.196078)
+texture = ExtResource("8_fgxyq")
+metadata/_edit_lock_ = true
+
+[node name="Beat Bar" type="TextureProgressBar" parent="Music Sheet" groups=["Bar 1", "Beat Progress Bar"]]
+offset_left = 225.0
+offset_top = -313.0
+offset_right = 1586.0
+offset_bottom = -306.0
+scale = Vector2(0.615651, 1)
+max_value = 200.0
+step = 0.0
+allow_greater = true
+texture_under = ExtResource("6_hlyne")
+texture_progress = ExtResource("7_01ijn")
+script = ExtResource("9_kxomr")
+metadata/_edit_use_anchors_ = true
+
+[node name="Note" type="AnimatedSprite2D" parent="Music Sheet/Beat Bar" groups=["Bar 1"]]
+position = Vector2(1510.6, 1.48999)
+scale = Vector2(1.6243, 1)
+sprite_frames = ExtResource("5_o667r")
+animation = &"ult"
+offset = Vector2(0, 2.71)
+script = ExtResource("6_ccdyr")
+
+[node name="Clef1" type="Sprite2D" parent="Music Sheet/Beat Bar" groups=["Bar 1"]]
+position = Vector2(-510.029, -11)
+scale = Vector2(1.6243, 1)
+texture = ExtResource("2_smcbt")
+script = ExtResource("8_ilgsy")
+
+[node name="GlowBorder" type="Sprite2D" parent="Music Sheet/Beat Bar" groups=["Bar 1"]]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(243.644, -16)
+scale = Vector2(6.03435, 0.693069)
+texture = ExtResource("9_s1hxp")
+script = ExtResource("10_rmlci")
+
+[node name="Beat Bar2" type="TextureProgressBar" parent="Music Sheet" groups=["Bar 2", "Beat Progress Bar"]]
+offset_left = 225.0
+offset_top = -112.0
+offset_right = 1586.0
+offset_bottom = -105.0
+scale = Vector2(0.615651, 1)
+max_value = 200.0
+step = 0.0
+allow_greater = true
+texture_under = ExtResource("6_hlyne")
+texture_progress = ExtResource("7_01ijn")
+script = ExtResource("9_kxomr")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
+
+[node name="Note" type="AnimatedSprite2D" parent="Music Sheet/Beat Bar2" groups=["Bar 2"]]
+position = Vector2(1510.6, 1.48999)
+scale = Vector2(1.6243, 1)
+sprite_frames = ExtResource("5_o667r")
+animation = &"ult_loop"
+offset = Vector2(0, 2.71)
+script = ExtResource("6_ccdyr")
+
+[node name="Clef2" type="Sprite2D" parent="Music Sheet/Beat Bar2" groups=["Bar 2"]]
+position = Vector2(-492.162, -9)
+scale = Vector2(1.6243, 1)
+texture = ExtResource("3_fcf81")
+script = ExtResource("8_ilgsy")
+
+[node name="GlowBorder" type="Sprite2D" parent="Music Sheet/Beat Bar2" groups=["Bar 2"]]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(243.644, -16)
+scale = Vector2(6.03435, 0.693069)
+texture = ExtResource("9_s1hxp")
+script = ExtResource("10_rmlci")
+
+[node name="Beat Bar3" type="TextureProgressBar" parent="Music Sheet" groups=["Bar 3", "Beat Progress Bar"]]
+offset_left = 225.0
+offset_top = 88.0
+offset_right = 1586.0
+offset_bottom = 95.0
+scale = Vector2(0.615651, 1)
+max_value = 200.0
+step = 0.0
+allow_greater = true
+texture_under = ExtResource("6_hlyne")
+texture_progress = ExtResource("7_01ijn")
+script = ExtResource("9_kxomr")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
+
+[node name="Note" type="AnimatedSprite2D" parent="Music Sheet/Beat Bar3" groups=["Bar 3"]]
+position = Vector2(1510.6, 1.48999)
+scale = Vector2(1.6243, 1)
+sprite_frames = ExtResource("5_o667r")
+animation = &"ult_loop"
+offset = Vector2(0, 2.71)
+script = ExtResource("6_ccdyr")
+
+[node name="Clef3" type="Sprite2D" parent="Music Sheet/Beat Bar3" groups=["Bar 3"]]
+position = Vector2(-492.162, -28)
+scale = Vector2(1.6243, 1)
+texture = ExtResource("4_o6pox")
+script = ExtResource("8_ilgsy")
+
+[node name="GlowBorder" type="Sprite2D" parent="Music Sheet/Beat Bar3" groups=["Bar 3"]]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(243.644, -16)
+scale = Vector2(6.03435, 0.693069)
+texture = ExtResource("9_s1hxp")
+script = ExtResource("10_rmlci")
+
+[node name="Beat Bar4" type="TextureProgressBar" parent="Music Sheet" groups=["Bar 4", "Beat Progress Bar"]]
+offset_left = 225.0
+offset_top = 290.0
+offset_right = 1586.0
+offset_bottom = 297.0
+scale = Vector2(0.615651, 1)
+max_value = 200.0
+step = 0.0
+allow_greater = true
+texture_under = ExtResource("6_hlyne")
+texture_progress = ExtResource("7_01ijn")
+script = ExtResource("9_kxomr")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
+
+[node name="Note" type="AnimatedSprite2D" parent="Music Sheet/Beat Bar4" groups=["Bar 4"]]
+position = Vector2(1510.6, 1.48999)
+scale = Vector2(1.6243, 1)
+sprite_frames = ExtResource("5_o667r")
+animation = &"ult_loop"
+offset = Vector2(0, 2.71)
+script = ExtResource("6_ccdyr")
+
+[node name="Clef4" type="Sprite2D" parent="Music Sheet/Beat Bar4" groups=["Bar 4"]]
+position = Vector2(-480.792, -17)
+scale = Vector2(1.6243, 1)
+texture = ExtResource("5_4mq81")
+script = ExtResource("8_ilgsy")
+
+[node name="GlowBorder" type="Sprite2D" parent="Music Sheet/Beat Bar4" groups=["Bar 4"]]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(243.644, -16)
+scale = Vector2(6.03435, 0.693069)
+texture = ExtResource("9_s1hxp")
+script = ExtResource("10_rmlci")
+
+[node name="Guides" type="Sprite2D" parent="Music Sheet"]
+position = Vector2(646, 38)
+texture = ExtResource("9_hu836")
+
+[node name="Beat Bar1b" type="TextureProgressBar" parent="Music Sheet" groups=["Beat Progress Bar", "Sub Bar 1"]]
+offset_left = 225.0
+offset_top = -303.0
+offset_right = 2947.0
+offset_bottom = -296.0
+scale = Vector2(0.615651, 1)
+max_value = 200.0
+step = 0.0
+allow_greater = true
+allow_lesser = true
+texture_progress = ExtResource("14_jgfe8")
+script = ExtResource("9_kxomr")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
+
+[node name="Note" type="Sprite2D" parent="Music Sheet/Beat Bar1b" groups=["Sub Bar 1"]]
+position = Vector2(1510.6, 15.5)
+scale = Vector2(1.6243, 1)
+texture = ExtResource("16_o3l78")
+offset = Vector2(0, 2.71)
+
+[node name="GlowBorder" type="Sprite2D" parent="Music Sheet/Beat Bar1b" groups=["Bar 1"]]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(243.644, -16)
+scale = Vector2(6.03435, 0.693069)
+texture = ExtResource("9_s1hxp")
+script = ExtResource("10_rmlci")
+
+[node name="Beat Bar2b" type="TextureProgressBar" parent="Music Sheet" groups=["Beat Progress Bar", "Sub Bar 2"]]
+offset_left = 225.0
+offset_top = -102.0
+offset_right = 2947.0
+offset_bottom = -95.0
+scale = Vector2(0.615651, 1)
+max_value = 200.0
+step = 0.0
+allow_greater = true
+allow_lesser = true
+texture_progress = ExtResource("14_jgfe8")
+script = ExtResource("9_kxomr")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
+
+[node name="Note" type="Sprite2D" parent="Music Sheet/Beat Bar2b" groups=["Sub Bar 2"]]
+position = Vector2(1510.6, 15.5)
+scale = Vector2(1.6243, 1)
+texture = ExtResource("16_o3l78")
+
+[node name="GlowBorder" type="Sprite2D" parent="Music Sheet/Beat Bar2b" groups=["Bar 2"]]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(243.644, -16)
+scale = Vector2(6.03435, 0.693069)
+texture = ExtResource("9_s1hxp")
+script = ExtResource("10_rmlci")
+
+[node name="Beat Bar3b" type="TextureProgressBar" parent="Music Sheet" groups=["Beat Progress Bar", "Sub Bar 3"]]
+offset_left = 225.0
+offset_top = 98.0
+offset_right = 2947.0
+offset_bottom = 105.0
+scale = Vector2(0.615651, 1)
+max_value = 200.0
+step = 0.0
+allow_greater = true
+allow_lesser = true
+texture_progress = ExtResource("14_jgfe8")
+script = ExtResource("9_kxomr")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
+
+[node name="Note" type="Sprite2D" parent="Music Sheet/Beat Bar3b" groups=["Sub Bar 3"]]
+position = Vector2(1510.6, 15.5)
+scale = Vector2(1.6243, 1)
+texture = ExtResource("16_o3l78")
+
+[node name="GlowBorder" type="Sprite2D" parent="Music Sheet/Beat Bar3b" groups=["Bar 3"]]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(243.644, -16)
+scale = Vector2(6.03435, 0.693069)
+texture = ExtResource("9_s1hxp")
+script = ExtResource("10_rmlci")
+
+[node name="Beat Bar4b" type="TextureProgressBar" parent="Music Sheet" groups=["Beat Progress Bar", "Sub Bar 4"]]
+offset_left = 225.0
+offset_top = 300.0
+offset_right = 2947.0
+offset_bottom = 307.0
+scale = Vector2(0.615651, 1)
+max_value = 200.0
+step = 0.0
+allow_greater = true
+allow_lesser = true
+texture_progress = ExtResource("14_jgfe8")
+script = ExtResource("9_kxomr")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
+
+[node name="Note" type="Sprite2D" parent="Music Sheet/Beat Bar4b" groups=["Sub Bar 4"]]
+position = Vector2(1510.6, 15.5)
+scale = Vector2(1.6243, 1)
+texture = ExtResource("16_o3l78")
+
+[node name="GlowBorder" type="Sprite2D" parent="Music Sheet/Beat Bar4b" groups=["Bar 4"]]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(243.644, -16)
+scale = Vector2(6.03435, 0.693069)
+texture = ExtResource("9_s1hxp")
+script = ExtResource("10_rmlci")
+
+[connection signal="value_changed" from="Music Sheet/Beat Bar" to="Music Sheet/Beat Bar" method="_on_value_changed"]
+[connection signal="animation_finished" from="Music Sheet/Beat Bar/Note" to="Music Sheet/Beat Bar/Note" method="_on_animation_finished"]
+[connection signal="animation_finished" from="Music Sheet/Beat Bar2/Note" to="Music Sheet/Beat Bar2/Note" method="_on_animation_finished"]
+[connection signal="animation_finished" from="Music Sheet/Beat Bar3/Note" to="Music Sheet/Beat Bar3/Note" method="_on_animation_finished"]
+[connection signal="animation_finished" from="Music Sheet/Beat Bar4/Note" to="Music Sheet/Beat Bar4/Note" method="_on_animation_finished"]
+[connection signal="value_changed" from="Music Sheet/Beat Bar1b" to="Music Sheet/Beat Bar1b" method="_on_value_changed"]

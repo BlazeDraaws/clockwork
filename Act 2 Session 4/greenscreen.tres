@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bngyj1g7bujit"]
+
+[ext_resource type="Shader" path="res://PotionHue.gdshader" id="1_3ttym"]
+
+[resource]
+shader = ExtResource("1_3ttym")
+shader_parameter/sample_colour = Color(0.176471, 0.898039, 0.890196, 1)
+shader_parameter/replacement_colour = Color(0.188325, 0.663202, 0.472779, 1)
+shader_parameter/sample_line_colour = Color(0.305882, 0.345098, 0.427451, 1)
+shader_parameter/replacement_line_colour = Color(0.688833, 0.507463, 0.403369, 1)

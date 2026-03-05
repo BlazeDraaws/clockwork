@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bficeb30sgkc8"]
+
+[ext_resource type="Script" path="res://window.gd" id="1_vl2yu"]
+
+[node name="Window" type="Window"]
+auto_translate_mode = 1
+initial_position = 1
+size = Vector2i(800, 800)
+script = ExtResource("1_vl2yu")
+
+[node name="Window2" type="Window" parent="."]
+auto_translate_mode = 1
+initial_position = 3
+current_screen = 0
+popup_window = true
