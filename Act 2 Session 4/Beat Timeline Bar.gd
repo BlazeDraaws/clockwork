@@ -74,7 +74,6 @@ func _toggle_speed(_speedsubmitted):
 		if yellow:
 			# Yellow RGB = (1, 1, 0)
 			_tint_node(self,color_base * Color(1, 0.9, 0.5))
- # bitch
 
 func _tint_node(node: Node, color: Color) -> void:
 	
